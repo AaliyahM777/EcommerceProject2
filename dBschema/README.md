@@ -12,5 +12,5 @@ dBschema- Contains MySQL Database including tables and queries of products,price
 
 Design-Contains ERD and Functional Decompostion design/layouts for Ecom Project
 
-
+Server.js- This file contains api endpoints connecting with databse  to display databse info to localhost/server
 
