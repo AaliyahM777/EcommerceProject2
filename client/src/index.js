@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles/index.css';
+//import './styles/index.css';
+import '/Users/aaliyahmccray/Documents/EcommerceProject2/client/src/styles/generalstyles.css';
 import {Route, Link, BrowserRouter as Router} from 'react-router-dom'
 import App from './Components/pages/App';
 import Products from './Components/pages/Products';
 import Contacts from './Components/pages/Contacts';
 import * as serviceWorker from './serviceWorker';
+
 
 const routing = (
     <Router>

@@ -5,6 +5,8 @@ CREATE DATABASE db_PenPowers;
 
 USE db_PenPowers ;
 
+--Created products table with listed datatypes--
+-- set Product_id as primary key= --
 CREATE TABLE Products(
 Product_id INT AUTO_INCREMENT NOT NULL,
 Img_url VARCHAR(200) NOT NULL,

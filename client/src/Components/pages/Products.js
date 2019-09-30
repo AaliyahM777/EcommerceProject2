@@ -2,7 +2,8 @@ import React from 'react';
 import NavBar from '../elements/Navbar'
 import Footer from '../elements/Footer'
 import ProductCards from '../elements/ProductCards'
-import {getProducts} from '../../Routes/apiroutes'
+import {getProducts, getProductfilter} from '../../Routes/apiroutes'
+
 
 class Products extends React.Component {
     state={
@@ -24,7 +25,14 @@ class Products extends React.Component {
         // .then(data => {this.setState({data})})
         // .catch(e => console.log("error - ", e));
     }
+
+
     render(){
+        const getFilteredProducts = (category) => {
+            getProductfilter(category)
+            .then (response => { return response.json()})
+            .then(data => {this.setState({data})})
+        }
         console.log('this- ', this.state);
     return (
         <div>
@@ -40,7 +48,8 @@ class Products extends React.Component {
                                 </div>
                             </div>
                             <div className="row">
-                                <input type="radio" id="blue" name="color" />
+                                <button className="filter-label" onClick={() => getFilteredProducts('businesspens')}>Business Pens</button>
+                                <input type="radio" id="blue" name="color"/>
                                 <label className="filter-label" htmlfor="blue">Business Pens</label>
                                 <input type="radio" id="red" name="color" />
                                 <label className="filter-label" htmlfor="red">Fun/Art Pens</label>

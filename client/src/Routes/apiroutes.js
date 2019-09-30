@@ -1,6 +1,6 @@
 
 
-// connecting react pages to api server
+// connecting react pages with api server
 
 //  const getProducts = () => 
 //   new Promise((resolve, reject) => {
@@ -15,7 +15,7 @@
 //     })
 //   })
 
-  const getProducts =() =>
+  const getProducts = () =>
     fetch('http://localhost:3001/api/products')
 
 //  componentDidMount() {
@@ -23,6 +23,14 @@
 //      this.setState({products: data})
 //  }
 
-const getProductfilter =() =>
-    fetch('http://localhost:3001/api/productfilter/:category')
- export {getProducts}
+const getProductfilter = (category) =>
+    fetch(`http://localhost:3001/api/productfilter/${category}`)
+      
+   export {getProducts, getProductfilter}
+
+
+
+
+
+
+

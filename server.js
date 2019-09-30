@@ -49,13 +49,10 @@ app.get('/api/products', function (req, res) {
   })
 })
 
-
-
-
 app.get('/api/productfilter/:category', function (req, res) {
 
   let filter=req.params.category
-  connection.query("SELECT Product_title, Price.Price_values FROM Products INNER JOIN Price ON Price_id = Products.Product_id WHERE Product_categories =?", filter, function(err, data){
+  connection.query("SELECT Products.*,Product_title, Price.Price_values FROM Products INNER JOIN Price ON Price_id = Products.Product_id WHERE Product_categories =?", filter, function(err, data){
     res.send(data)
   })
 })
