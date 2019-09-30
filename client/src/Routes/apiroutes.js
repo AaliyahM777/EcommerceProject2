@@ -23,5 +23,6 @@
 //      this.setState({products: data})
 //  }
 
-
+const getProductfilter =() =>
+    fetch('http://localhost:3001/api/productfilter/:category')
  export {getProducts}
