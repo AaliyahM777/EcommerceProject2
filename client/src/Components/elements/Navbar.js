@@ -16,9 +16,9 @@ function NavBar() {
             <a className="navbar-brand" href="#"><img src="LogoMakr_1Igl02.png" class="img-fluid"/> </a>
             <div className="collaspe navbar-collapse" id="navigation-bar">
                 <ul className="navbar-nav ml-auto">
-                    <li className="nav-item"> <a className="nav-link" href="index.html">Home</a></li>
-                    <li className="nav-item"> <a className="nav-link" href="product.html">Our Products</a></li>
-                    <li className="nav-item"> <a className="nav-link" href="contact.html">Contact Us </a> </li>
+                    <li className="nav-item"> <a className="nav-link" href="/">Home</a></li>
+                    <li className="nav-item"> <a className="nav-link" href="/products">Our Products</a></li>
+                    <li className="nav-item"> <a className="nav-link" href="/contacts">Contact Us </a> </li>
                 </ul>
             </div>
         </nav>

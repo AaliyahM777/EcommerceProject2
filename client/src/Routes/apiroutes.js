@@ -23,10 +23,14 @@
 //      this.setState({products: data})
 //  }
 
+
+const getPrices = () =>
+fetch('http://localhost:3001/api/prices')
+
 const getProductfilter = (category) =>
     fetch(`http://localhost:3001/api/productfilter/${category}`)
       
-   export {getProducts, getProductfilter}
+   export {getProducts, getProductfilter,getPrices}
 
 
 

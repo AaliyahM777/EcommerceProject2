@@ -253,6 +253,11 @@ h2{
     }
 }
 
+/****** CAROUSEL ******/
+
+.carousel-indicators li {
+    background-color: purple;
+}
 
 
 
@@ -263,7 +268,7 @@ input[type="radio"] {
 
 
 .filter-label {
-    width:23%;
+    width:20%;
     float:left;
     text-align:center;
     background: rgb(48, 5, 116);;

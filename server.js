@@ -1,6 +1,8 @@
 require('dotenv').config()
-const express = require('express')
+const express = require('express');
+const helmet= require('helmet');
 const mysql = require('mysql');
+
 
 const app = express();
 const PORT = 3001
@@ -15,6 +17,7 @@ var connection = mysql.createConnection({
 });
 
 
+app.use (helmet()); // added security for server
 //support express of application/x-www-form-urlencoded post data
 app.use(express.urlencoded({ extended: true }));
 // support express of application/json type post data
@@ -28,7 +31,6 @@ app.use((req, res, next) => {
   res.set('Access-Control-Allow-Origin', 'http://localhost:3000')
   next()
 })
-
 
 connection.connect(function(err) {
   if (err) throw err;
@@ -48,6 +50,16 @@ app.get('/api/products', function (req, res) {
     res.send(data)   
   })
 })
+
+
+app.get('/api/prices', function (req, res) {
+
+  let filter=req.params.category
+  connection.query("SELECT Products.*,Product_title, Price.Price_values FROM Products INNER JOIN Price ON Price_id = Products.Product_id WHERE Price_values <= 9.99", filter,function (err,data){
+    res.send(data)
+  })
+})
+
 
 app.get('/api/productfilter/:category', function (req, res) {
 

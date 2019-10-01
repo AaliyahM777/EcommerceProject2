@@ -2,7 +2,8 @@ import React from 'react';
 import NavBar from '../elements/Navbar'
 import Footer from '../elements/Footer'
 import ProductCards from '../elements/ProductCards'
-import {getProducts, getProductfilter} from '../../Routes/apiroutes'
+import {getProducts, getProductfilter, getPrices} from '../../Routes/apiroutes'
+import Carousel from '../elements/Carousel';
 
 
 class Products extends React.Component {
@@ -24,6 +25,8 @@ class Products extends React.Component {
         // .then (response => { return response.json()})
         // .then(data => {this.setState({data})})
         // .catch(e => console.log("error - ", e));
+        // [Promise]
+        
     }
 
 
@@ -33,7 +36,12 @@ class Products extends React.Component {
             .then (response => { return response.json()})
             .then(data => {this.setState({data})})
         }
-        console.log('this- ', this.state);
+
+        const getPricess = () => {
+            getPrices().then (response => { return response.json()})
+            .then(data => {this.setState({data})})
+            console.log('this- ', this.state);
+        }
     return (
         <div>
             <body>
@@ -50,20 +58,19 @@ class Products extends React.Component {
                             <div className="row">
                                 <button className="filter-label" onClick={() => getFilteredProducts('businesspens')}>Business Pens</button>
                                 <input type="radio" id="blue" name="color"/>
-                                <label className="filter-label" htmlfor="blue">Business Pens</label>
+                                <button className="filter-label" onClick={() => getFilteredProducts('funartpens')}>Fun/Art Pens</button>
                                 <input type="radio" id="red" name="color" />
-                                <label className="filter-label" htmlfor="red">Fun/Art Pens</label>
+                                <button className="filter-label" onClick={() => getPricess()}>Under $10</button>
                                 <input type="radio" id="green" name="color" />
-                                <label className="filter-label" htmlfor="green">Under $10</label>
                                 <input type="radio" id="reset" name="color" />
                                 <label className="filter-label" htmlfor="reset">All</label>
-                                <div className="row">
-                                    {<ProductCards proddata={this.state.data} />}
-                                </div>
+                                
+                                {<ProductCards proddata={this.state.data} />}
+                                
                             </div>
                         </div>
                     </section>
-                    <Footer />
+            
                 </div>
             </body>    
         </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import NavBar from '../elements/Navbar';
 import Footer from '../elements/Footer';
 
+
 function Contacts() {
     return (
         <div>
@@ -19,11 +20,13 @@ function Contacts() {
                     <form className="myform" action="#" method="POST" name="my_form">
                         <fieldset>
                             <legend>General Information</legend>
-                            <label for="Full Name">Full Name:</label>
-                            <input type="text" name="Full Name" id="Full Name" placeholder="John" required />
-
-                            <label for="Phone Number">Phone Number:</label>
-                            <input type="text" name="Phone Number" id="Phone Number" placeholder="555-333-3355" required />
+                            <div className="row">
+                                <div className="col">
+                                    <label for="First Name">Full Name:</label>
+                                    <input type="text" name="Full Name" id="First Name" placeholder="John" required />
+                                </div>
+                            
+                            </div>
 
                             <label for="Email Address">Email Address:</label>
                             <input type="text" name="Email" id="Email" placeholder="John345@gmail.com" required />
@@ -37,7 +40,7 @@ function Contacts() {
                         <input type="submit" value="submit" />
                     </form>
                 </div>
-                <Footer />
+               
             </body>
         </div>
     )
