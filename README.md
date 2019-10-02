@@ -1,16 +1,16 @@
-EcomerceProject ver.2 incldues:
+# EcomerceProject ver.2 incldues:
 
-Client- Contains Ecommerce Website React App
+#### Client- Contains Ecommerce Website React App
 In src file...
--index.js file contain react dom router and other imports
--Components folder contains elements and react website pages
--Routes folder contains apirouter
--Styles folder that contains my css styling for webpage
+- index.js file contain react dom router and other imports
+- Components folder contains elements and react website pages
+- Routes folder contains apirouter
+- Styles folder that contains my css styling for webpage
 
 
-dBschema- Contains MySQL Database including tables and queries of products,price and contacts
+**_dBschema_** - Contains MySQL Database including tables and queries of products,price and contacts
 
-Design-Contains ERD and Functional Decompostion design/layouts for Ecom Project
+**_Design-Contains_** ERD and Functional Decompostion design/layouts for Ecom Project
 
-Server.js- This file contains api endpoints connecting with databse  to display databse info to localhost/server
+**_Server.js_** - This file contains api endpoints connecting with databse  to display databse info to localhost/server
 

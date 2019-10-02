@@ -288,4 +288,7 @@ input[type="radio"] {
     font-weight: 400;
 }
   
-
+#name-error,
+#email-error{
+    color:#fff;
+}

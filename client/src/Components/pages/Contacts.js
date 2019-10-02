@@ -1,11 +1,37 @@
 import React from 'react';
-import NavBar from '../elements/Navbar';
-import Footer from '../elements/Footer';
 
 
 function Contacts() {
+
+
+    const submitForm =(e)=>{
+        e.preventDefault();
+
+        const nameInput = document.querySelector('#full-name').value;
+        const emailInput = document.querySelector('#email').value;
+       
+         if(nameInput.length === 0){
+            document.querySelector('#name-error').innerHTML = 'This field is required';
+         }
+
+         if(emailInput.length === 0){
+            document.querySelector('#email-error').innerHTML = 'This field is required';
+         }
+    }
+
+    const changeInput = (inputId) => {
+        
+        if(inputId==='name'){            
+            document.querySelector('#name-error').innerHTML = '';
+        }
+
+        if(inputId==='email'){
+            document.querySelector('#email-error').innerHTML = '';
+        }
+    }
+
     return (
-        <div>
+      
             <body>
                 <div className="container2">
                     <header>
@@ -17,20 +43,23 @@ function Contacts() {
                 </div>
 
                 <div>
-                    <form className="myform" action="#" method="POST" name="my_form">
+                    <form className="myform" onSubmit={submitForm} name="my_form">
                         <fieldset>
                             <legend>General Information</legend>
                                 <div className="row">
                                 <div className="col">
                                     <label for="Full Name">Full Name:</label>
-                                    <input type="text" name="Full Name" id="Full Name" placeholder="John" required />
+                                    
+                                    <input type="text" onChange={() => changeInput('name') } name="Full Name" id="full-name" placeholder="John" />
+                                    <div id="name-error"></div>
                                 </div>
 
                               </div>
                                 <div className="row">
                                 <div className="col">
                                     <label for="Email Address">Email Address:</label>
-                                    <input type="text" name="Email" id="Email" placeholder="John345@gmail.com" required />
+                                    <input type="text" onChange={() => changeInput('email') }name="Email" id="email" placeholder="John345@gmail.com" />
+                                    <div id="email-error"></div>
                                 </div>
                                 </div>
                         </fieldset>
@@ -53,7 +82,7 @@ function Contacts() {
                 </div>
 
             </body>
-        </div>
+      
     )
 }
 
