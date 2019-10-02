@@ -132,7 +132,7 @@ width: 50%;
 
 #carouselExampleSlidesOnly{
     padding:30px;
-    width:80%;
+    width:100%;
     margin:auto;
 }
 
@@ -174,7 +174,7 @@ input[type=text] {
       margin: 10%;
   }
 textarea{
-    margin:20px;
+     width:100%;
     height:350px;
 
 }
@@ -194,7 +194,6 @@ textarea{
     width:80%;
     margin:auto;
     background: rgb(59,3,163);
-background: linear-gradient(90deg, rgba(59,3,163,1) 0%, rgba(88,37,170,1) 35%, rgba(156,119,231,1) 100%);
   }
 
   
@@ -257,6 +256,7 @@ h2{
 
 .carousel-indicators li {
     background-color: purple;
+    padding:6px;
 }
 
 
@@ -286,31 +286,6 @@ input[type="radio"] {
     text-shadow: 5px 5px rgb(48, 5, 116);
     font-family: "Verdana";
     font-weight: 400;
+}
+  
 
-    /* styling for my labels:
-    blue=Buisness Pens filter 
-    red= Fun/Art Pens
-    green=Under $10
-    
-    */
-    /* when radio button blue is checked changes background once clicked 
-      */
-}
-input[type="radio"][id="blue"]:checked + .filter-label {
-    background: #ad6beb;
-}
-input[type="radio"][id="blue"]:checked ~ .row .funart, input[type="radio"][id="blue"]:checked ~ .row .green {
-    visibility: hidden;
-}
-input[type="radio"][id="red"]:checked + .filter-label  {
-    background: #ad6beb;
-}
-input[type="radio"][id="red"]:checked ~ .row .business, input[type="radio"][id="red"]:checked ~ .row .green {
-    visibility: hidden;
-}
-input[type="radio"][id="green"]:checked + .filter-label  {
-    background: #ad6beb;
-}
-input[type="radio"][id="green"]:checked ~ .row .over10 {
-    visibility: hidden;
-}
