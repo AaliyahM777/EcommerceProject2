@@ -19,7 +19,19 @@ In src file...
 **_Server.js_** - This file contains api endpoints connecting with databse  to display databse info to localhost/server
 
 ## Installation
+
+* Open your terminal
+* 
  To add in node modules
 
   `npm install` 
+
+
+ ## LICSENSE 
+ * MIT
+
+
+
+   
+
 

@@ -3,30 +3,28 @@ import ProductCards from '../elements/ProductCards'
 import {getProducts, getProductfilter, getPrices} from '../../Routes/apiroutes'
 import Carousel from '../elements/Carousel';
 
-
+// we created  a classical component which stores state and is seting data into an empty array
 class Products extends React.Component {
     state={
         data:[]
     }
+    // we use component did mount  to help allow us to set state method that will help change our app
+    // and render or load our jsx data
     componentDidMount(){
 
-        // getProducts()
-        // .then(data => {this.setState({ data })})
-        // .catch(e => console.log("error - ", e));
-
-        // working example
+        // calling our get products function from  apirouter
+        // we return our response that will send our json object of all our products
+       
         getProducts() // [Promise]
         .then (response => { return response.json()})
         .then(data => {this.setState({data})})
 
-        // fetch('http://localhost:3001/api/products')
-        // .then (response => { return response.json()})
-        // .then(data => {this.setState({data})})
-        // .catch(e => console.log("error - ", e));
-        // [Promise]
-        
     }
 
+ //   we render our   get filtered products as new funntion which we pass in category
+ /* our getproduct filter function in which we request all our products 
+ return our json object of our products filter depending on which filter category
+*/
 
     render(){
         const getFilteredProducts = (category) => {
@@ -35,7 +33,7 @@ class Products extends React.Component {
             .then(data => {this.setState({data})})
             console.log('this- ', this.state)
         }
-
+ // use same process above for our under 10 price filter
         const getPricess = () => {
             getPrices().then (response => { return response.json()})
             .then(data => {this.setState({data})})
@@ -54,6 +52,7 @@ class Products extends React.Component {
                                     <p>Choose from our Pen collection</p>
                                 </div>
                             </div>
+                                 {/* we created onclick event that will call our categories bus,funartpens as our filter button */}
                             <div className="row">
                                 <button className="filter-label" onClick={() => getFilteredProducts('businesspens')}>Business Pens</button>
                                 <input type="radio" id="blue" name="color"/>
@@ -64,6 +63,8 @@ class Products extends React.Component {
                                 <input type="radio" id="reset" name="color" />
                                 <label className="filter-label" htmlfor="reset">All</label>
                                 
+                                {/* we call our product cards this.state.data so we refresh the page 
+                                it will give us a new set of product cards depending on what data is being requested */}
                                 {<ProductCards proddata={this.state.data} />}
                                 
                             </div>

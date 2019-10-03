@@ -1,29 +1,11 @@
-
-
-// connecting react pages with api server
-
-//  const getProducts = () => 
-//   new Promise((resolve, reject) => {
-//     return fetch('http://localhost:3001/api/products').then(response => {
-//       if (response.ok) {
-//         resolve(response.json())
-//       } else {
-//         reject(new Error('error'))
-//       }
-//     }, error => {
-//       reject(new Error(error.message))
-//     })
-//   })
-
+// how our react pages are connecting with our servers
+   // here we use get products fucntion to fetch our products api
   const getProducts = () =>
     fetch('http://localhost:3001/api/products')
 
-//  componentDidMount() {
-//      const data = getProducts();
-//      this.setState({products: data})
-//  }
 
 
+// here we fetch for our prices api we created which will include prices under 10 from database
 const getPrices = () =>
 fetch('http://localhost:3001/api/prices')
 
