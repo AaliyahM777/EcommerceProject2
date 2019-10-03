@@ -1,8 +1,8 @@
 import React from 'react';
 
-{/* created a  footer functional component for footer bottom at webpage and it returns 
+/* created a  footer functional component for footer bottom at webpage and it returns 
 my social media links
- */}
+ */
 
 function Footer() {
     return(

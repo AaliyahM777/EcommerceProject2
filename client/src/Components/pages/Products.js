@@ -1,6 +1,4 @@
 import React from 'react';
-import NavBar from '../elements/Navbar'
-import Footer from '../elements/Footer'
 import ProductCards from '../elements/ProductCards'
 import {getProducts, getProductfilter, getPrices} from '../../Routes/apiroutes'
 import Carousel from '../elements/Carousel';
@@ -35,6 +33,7 @@ class Products extends React.Component {
             getProductfilter(category)
             .then (response => { return response.json()})
             .then(data => {this.setState({data})})
+            console.log('this- ', this.state)
         }
 
         const getPricess = () => {

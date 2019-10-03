@@ -1,8 +1,7 @@
 import React from 'react';
 
 // made a functional component called carousel that returns my bootstrap slideshow
-/*function Carousel() {
-    return (*/
+
 
 /*Boot Strap SlideShow
 set id  and className of carousel, (data-ride carousel) waits for the page to load before animating , (data-interveral set to 5 thousands miliseconds=5 seconds )is the time it stays on one slide till rotates
@@ -12,8 +11,11 @@ set id  and className of carousel, (data-ride carousel) waits for the page to lo
 
 function Carousel() {
     return (
-
-        <div id="myCarousel" className="carousel slide" data-ride="carousel" data-interval="5000">
+      
+        <div id="myCarousel" className="carousel slide" data-ride="carousel" data-interval="5000" data-pause="false">
+             {/*carousel indicators (buttons under slideshow) goes along with slideshow */}
+              {/*the data targets my id name of my carousel and on my first slide 
+            its set to active but will start at 0 = first item of slide */}
             <ol className="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
                 <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -21,7 +23,7 @@ function Carousel() {
             </ol>
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    {/* <img className="d-block w-100" src="https://images-na.ssl-images-amazon.com/images/I/71qfx5e5iNL._SL1500_.jpg" alt="First slide" /> */}
+
                     <img className="d-block w-100" src="https://images-na.ssl-images-amazon.com/images/I/71qfx5e5iNL._SL1500_.jpg" alt="First slide" />
                 </div>
                 <div className="carousel-item">
@@ -31,6 +33,7 @@ function Carousel() {
                     <img className="d-block w-100" src="https://images-na.ssl-images-amazon.com/images/I/51%2BkuA2VmnL._SL1000_.jpg" alt="Third slide" />
                 </div>
             </div>
+                {/*We have carousel controls that are buttons and let's us go from previous slide or next slide */}
             <a className="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
                 <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span className="sr-only">Previous</span>
