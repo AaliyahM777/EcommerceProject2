@@ -26,6 +26,11 @@ In src file...
 
   `npm install` 
 
+To start react app
+  ` npm run start`
+
+  To run api testing
+  `npm test`
 
  ## LICSENSE 
  * MIT
