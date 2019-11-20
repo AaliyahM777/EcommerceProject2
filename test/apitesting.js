@@ -1,3 +1,4 @@
+// used chai as expect so we dont have to use chai.expect each time
 const expect = require('chai').expect;
 const request = require('request');
 

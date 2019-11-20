@@ -1,6 +1,7 @@
 import React from 'react';
 
 // made a functional component
+// destructing propdata out of props
 
 function ProductCards(props) {
     const {proddata}=props
